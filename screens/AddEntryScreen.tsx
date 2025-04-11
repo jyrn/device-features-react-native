@@ -94,13 +94,12 @@ export default function AddEntryScreen() {
       
       await AsyncStorage.setItem("travelEntries", JSON.stringify(updated));
 
-      // Schedule a local push notification
       await Notifications.presentNotificationAsync({
         title: "New Memory Added 🗺️",
         body: "Your travel moment has been saved to your memories.",
       });
 
-      // Reset the state and navigate back to the Home screen
+   
       setImageUri(null);
       setAddress(null);
       navigation.goBack('Home');

@@ -41,7 +41,7 @@ export const clearAllEntries = async () => {
     return false;
   }
 };
-// Add this to your storage.ts file
+
 export const deleteEntryFromStorage = async (id: string): Promise<boolean> => {
     try {
       const stored = await AsyncStorage.getItem("travelEntries");

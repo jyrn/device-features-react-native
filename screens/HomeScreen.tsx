@@ -48,9 +48,6 @@ export default function HomeScreen() {
 
   return (
     <View style={[styles.container, theme === "dark" && styles.dark]}>
-     
-
-      {/* Fixed Header with Theme Toggle */}
       <View style={[styles.headerContainer, theme === "dark" && styles.headerDark]}>
         <StatusBar barStyle={theme === "dark" ? "light-content" : "dark-content"} />
         <Text style={[styles.title, theme === "dark" && styles.textDark]}>
@@ -65,7 +62,6 @@ export default function HomeScreen() {
         </TouchableOpacity>
       </View>
 
-      {/* Horizontal Scroll of Cards with Captions */}
       <View style={styles.listContainer}>
         {entries.length === 0 ? (
           <Text style={[styles.noEntriesText, theme === "dark" && styles.textDark]}>
@@ -108,7 +104,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingTop: StatusBar.currentHeight ?? 50, // Add status bar height here
+    paddingTop: StatusBar.currentHeight ?? 50, 
     paddingBottom: 20,
     paddingHorizontal: 16,
     backgroundColor: '#e9ecef',
@@ -139,7 +135,7 @@ const styles = StyleSheet.create({
   
   cardWithCaptionContainer: {
     alignItems: 'center',
-    width: "100%", // full width
+    width: "100%", 
     marginBottom: 24,
   },
   

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity, Alert, Dimensions } from "react-native";
 import { TravelEntry } from "../utils/storage";
-import { Ionicons } from "@expo/vector-icons";  // Importing Ionicons for the heart icon
+import { Ionicons } from "@expo/vector-icons"; 
 
 interface EntryCardProps {
   entry: TravelEntry;
@@ -11,7 +11,7 @@ interface EntryCardProps {
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
 const EntryCard: React.FC<EntryCardProps> = ({ entry, onDelete }) => {
-  const [isFavorite, setIsFavorite] = useState(false);  // State to toggle the heart icon
+  const [isFavorite, setIsFavorite] = useState(false); 
 
   const handleDelete = () => {
     Alert.alert(
@@ -25,14 +25,12 @@ const EntryCard: React.FC<EntryCardProps> = ({ entry, onDelete }) => {
   };
 
   const handleFavoriteToggle = () => {
-    setIsFavorite(prev => !prev);  // Toggle the favorite state
+    setIsFavorite(prev => !prev); 
   };
 
   return (
     <View style={styles.card}>
       <Image source={{ uri: entry.imageUri }} style={styles.image} />
-
-      {/* Overlays: caption (top-left), address (bottom-left) */}
       <View style={styles.overlay}>
         {entry.caption && (
           <Text style={styles.caption} numberOfLines={1}>
@@ -44,14 +42,12 @@ const EntryCard: React.FC<EntryCardProps> = ({ entry, onDelete }) => {
         </Text>
       </View>
 
-      {/* Buttons container for delete and favorite */}
       <View style={styles.buttonContainer}>
-        {/* Delete Button */}
+    
         <TouchableOpacity style={styles.deleteButton} onPress={handleDelete}>
           <Text style={styles.deleteText}>×</Text>
         </TouchableOpacity>
 
-        {/* Heart Toggle Button */}
         <TouchableOpacity style={styles.favoriteButton} onPress={handleFavoriteToggle}>
           <Ionicons
             name={isFavorite ? "heart" : "heart-outline"}
@@ -111,7 +107,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 16,
     right: 16,
-    flexDirection: "row",  // Align the buttons side by side
+    flexDirection: "row", 
     justifyContent: "flex-end",
   },
   deleteButton: {
@@ -121,7 +117,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     justifyContent: "center",
     alignItems: "center",
-    marginRight: 8,  // Space between the delete button and heart
+    marginRight: 8, 
   },
   deleteText: {
     color: "white",
@@ -131,7 +127,7 @@ const styles = StyleSheet.create({
     marginTop: -2,
   },
   favoriteButton: {
-    backgroundColor: "rgba(255, 255, 255, 0.5)",  // Slight transparent background to make the heart visible
+    backgroundColor: "rgba(255, 255, 255, 0.5)",  
     width: 40,
     height: 40,
     borderRadius: 20,

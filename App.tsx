@@ -19,7 +19,7 @@ function HomeStackScreen() {
   return (
     <HomeStack.Navigator
       screenOptions={{
-        headerShown: false // Disable the stack header since we have a custom one in HomeScreen
+        headerShown: false 
       }}
     >
       <HomeStack.Screen 
@@ -54,26 +54,26 @@ function MyTabs() {
       screenOptions={{
         tabBarStyle: {
           backgroundColor: theme === 'dark' ? '#343a40' : '#62b6cb',
-          borderRadius: 45,  // Makes the bottom navigation bar rounder
-          height: 80,        // Increase the height for a more rounded effect
-          position: 'absolute',  // Ensure it's positioned at the bottom of the screen
-          left: 0,           // Position at the far left
-          right: 0,          // Position at the far right
-          bottom: 20,        // Add space from the bottom
-          marginHorizontal: '5%', // Add equal margin from both sides (centers the nav)
+          borderRadius: 45,  
+          height: 80,      
+          position: 'absolute',  
+          left: 0,         
+          right: 0,        
+          bottom: 20,     
+          marginHorizontal: '5%', 
           shadowColor: theme === 'dark' ? '#000' : '#ccc',
           shadowOffset: { width: 0, height: 2 },
           shadowOpacity: 0.3,
           shadowRadius: 6,
-          paddingBottom: 15,  // Adjust bottom padding (increase/decrease)
-          paddingTop: 10,      // Adjust top padding if necessary
-          borderTopWidth: 0,  // Remove the top border
+          paddingBottom: 15,  
+          paddingTop: 10,     
+          borderTopWidth: 0,  
           
 
         },
         tabBarActiveTintColor: theme === 'dark' ? '#fff' : '#fff',
         tabBarInactiveTintColor: theme === 'dark' ? '#dee2e6' : '#dee2e6',
-        headerShown: false, // Hide headers at tab level
+        headerShown: false, 
       }}
     >
       <Tab.Screen
